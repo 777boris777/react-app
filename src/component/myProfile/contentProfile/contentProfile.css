@@ -1,0 +1,15 @@
+.contentProfile{
+    width: 80%;
+    height: 100%;
+
+}
+.myContent{
+    /* width: 400px; */
+    height: 10%;
+    font-size: 300%;
+    display: flex;
+}
+.headerContent{
+    margin: auto;
+   text-align: center;
+}

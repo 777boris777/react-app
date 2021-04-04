@@ -1,0 +1,19 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(13,27,30,1) 0%, rgba(119,152,171,1) 50%, rgba(195,219,197,1) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+*{
+  font-family: 'Fredoka One', cursive;
+}

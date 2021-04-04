@@ -1,0 +1,25 @@
+.ProfilePostsTitle {
+    width: 60%;
+    height: 15%;
+    background-color: #a4a4a4;
+    border-radius: 10px;
+    margin: 5px auto;
+}
+
+.ProfilePostsText {
+    margin-left: 20px;
+}
+
+.ProfilePosts {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.error{
+    font-size: 130%;
+    /* border:1px solid; */
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 45%;
+}
