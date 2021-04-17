@@ -1,103 +1,100 @@
 .home {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    /* height: 100%; */
     margin: 0;
     padding: 0;
 }
-
-.homeContent {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 .bgImage {
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 200%;
+    font-size: 5vw;
 }
-
 .homicPoster {
     text-decoration: none;
     color: black;
 }
-
 .homicPoster:hover {
     text-decoration: none;
     color: darkred;
 }
-
-
 .profileLink {
     position: absolute;
     top: 0;
     left: 0;
-    width: 15%;
-    height: 6%;
+    width: 22vw;
+    height: 9vh;
     background-color: rgba(0, 212, 255, 1);
-    text-align: center;
-    font-size: 150%;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
 }
-
 .dezaynn {
     text-align: center;
-    font-size: 400%;
-    margin-top: 20%;
+    font-size: 7vw;
+    margin-top: 20vw;
 }
-
 .log {
-    height: 5%;
-    width: 100%;
-    text-align: center;
-    margin-top: -5%;
+    height: 5vh;
+    width: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
 }
-
-.koxicHelnox, .koxMtnox {
+.koxicHelnox,
+.koxMtnox {
     position: absolute;
     top: 0;
     left: 0;
-    width: 15%;
-    height: 90%;
+    width: 22vw;
+    height: 90vh;
     background-color: rgba(0, 212, 255, 1);
     background: rgb(251, 251, 251);
-    background: linear-gradient(225deg, rgba(251, 251, 251, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    background: linear-gradient(
+        225deg,
+        rgba(251, 251, 251, 1) 0%,
+        rgba(0, 212, 255, 1) 100%
+    );
 }
-
 .koxicHelnox {
-    animation-name: helnel;
-    animation-duration: 2s;
+    transition: 2s;
+    top: 0vh;
 }
-
 .koxMtnox {
-    animation-name: mtnel;
-    animation-duration: 2s;
-    margin-top: -40%;
+    /* visibility: hidden; */
+    transition: 2s;
+    top: -80vh;
 }
-
 .postslink {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    /* height: 100%; */
 }
 
-@keyframes helnel {
-    from {
-        margin-top: -40%;
+@media screen and (max-width: 600px) {
+    .homicPoster:hover {
+        text-decoration: none;
+        color: darkred;
     }
-    to {
-        margin-top: 0%;
+    .profileLink {
+        width: 100vw;
+        font-size: 5vw;
     }
-}
-
-@keyframes mtnel {
-    to {
-        margin-top: -40%;
+    .dezaynn {
+        margin-top: 50%;
     }
-    from {
-        margin-top: 0%;
+    .log {
+        width: 100vw;
     }
+    .koxicHelnox,
+    .koxMtnox {
+        width: 100vw;
+    }
+    .postslink {
+        width: 100vw;
+    }
+    
 }

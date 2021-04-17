@@ -1,61 +1,72 @@
-.post{
-    width: 50%;
-    height: 15%;
+.post {
+    width: 400px;
+    height: 100px;
     display: flex;
-    /* color: white; */
     background-color: #a4a4a4;
     border-radius: 10px;
     margin: 5px auto;
-    margin-left: 25%;
+    /* margin-left: 25%; */
 }
-.avatar{
+.avatar {
     margin: 15px;
     width: 40px;
     height: 40px;
 }
-.postContent{
-    height: 100%;
-    width: 100%;
+.postContent {
+    width: 330px;
 }
-.infop{
-    /* font-family: 'Fredoka One', cursive; */
-
-    height: 50%;
+.infop {
+    height: 20px;
     margin: 0;
-    /* margin-top: 8px; */
-    /* font-size: 130%; */
     padding: 10px;
 }
-.info{
-    display: flex; 
+.info {
+    display: flex;
 }
-.postP{
+.postP {
+    height: 40px;
     margin: 8px;
+    overflow: auto;
 }
-.posttext{
+.posttext {
     display: flex;
+    align-self: flex-end;
 }
-
-/* 
-.posthead{
-    height: 30%;
+.postTitle {
+    font-weight: bold;
+}
+.posthead {
+    height: 40px;
     display: flex;
-    flex-direction: row;
+    align-self: flex-start;
 }
-
-
-
-
-
-.postfooter{
-    margin: auto;
-    margin-top: 20px;
-
-    height: 20%;
-    width: 60%;
+@media screen and (max-width: 600px) {
+    .post {
+        width: 70vw;
+        height: 20vw;
+    }
+    .Avatar{
+        width: 25px !important;
+        height: 25px !important;
+    }
+    .avatar {
+        width: 25px;
+        height: 25px;
+    }
+    .postContent {
+        width: 55vw;
+    }
+    .infop {
+        height: 2vw;
+        padding: 5px;
+    }
+    .info {
+        display: flex;
+    }
+    .postP {
+        height: 8vw;
+    }
+    .posthead {
+        height: 7vw;
+    }
 }
-#like,#comment,#shear{
-    margin:0 5.16%;
-    width: 23%;
-    height: 100%;
-} */

@@ -11,7 +11,7 @@ const MenuProfile = (props) => {
                     className='bgAvatar'
                     src={props.avatar}
                 />
-                <p className='userName'>{props.name}</p>
+                <p className='userName'>{props.name.split("@", 1)}</p>
             </div>
             <br />
             <div className='menuBar'>

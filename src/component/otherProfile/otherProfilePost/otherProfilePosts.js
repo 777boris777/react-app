@@ -1,13 +1,16 @@
 import React from 'react';
 import './otherProfilePosts.css'
- 
+
 const OtherProfilePosts = (props) => {
   if (props.data.length > 0) {
     const ProfilePosts = props.data.map(esi => (
-      <div className='ProfilePostsTitle'>
-        <h5 className='ProfilePostsText'>{esi.date}</h5>
-        <h3 className='ProfilePostsText' style={{ textAlign: 'center'}}>{esi.title}</h3>
-        <p className='ProfilePostsText' style={{ textAlign: 'center'}}>{esi.content}</p>
+      <div className='ProfilePostsPost'>
+        <p className='ProfilePostsTime'>{esi.date.split("T", 1)}</p>
+        <div className='text'>
+
+          <p className='ProfilePostsTitle'>{esi.title}</p>
+          <p className='ProfilePostsText'>{esi.content}</p>
+        </div>
       </div>
     ))
     return (

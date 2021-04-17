@@ -8,7 +8,7 @@ const Flip = () => {
     const [anim, setAnimation] = useState(false)
     return (
         <div className='flip'>
-            <button onClick={() => setAnimation(!anim)} >{anim ? "login->":"<-signup"}</button>
+            <button onClick={() => setAnimation(!anim)} >{anim ? "Login->":"<-Signup"}</button>
             <div className={anim ? ['flip-card-inner', 'anim'].join(' ') : 'flip-card-inner'}>
                 <div className='login'>
                     <Login />

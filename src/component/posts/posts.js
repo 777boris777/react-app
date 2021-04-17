@@ -20,15 +20,17 @@ const Posts = (props) => {
             />
         )
     })
-    if(posts.length > 0){
+    if (posts.length > 0) {
         return (
-            <div className='posts'>
+            <div>
                 <Header />
-                {posts}
+                <div className='posts'>
+                    {posts}
+                </div>
             </div>
         );
     }
-    else{
+    else {
         return (
             <div className='posts'>
                 <div style={{ marginLeft: '50%', marginTop: '20%' }}>
@@ -37,6 +39,6 @@ const Posts = (props) => {
             </div>
         )
     }
-    
+
 }
 export default Posts;

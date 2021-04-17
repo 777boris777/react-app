@@ -1,4 +1,5 @@
 import React from 'react';
+import './updatePost.css'
 
 
 class UpdatePost extends React.Component {
@@ -41,31 +42,69 @@ class UpdatePost extends React.Component {
             }
         }
     }
-
     render() {
         return (
-            <div>
-                <h2 style={{ margin: '10px' }} >Add something</h2>
+            <div className='modalWrap'>
+                <h2 style={{ margin: '10px' }} >Edit</h2>
                 <input
                     id="standard"
                     placeholder="Title"
-                    className='editText'
-                    type='text'
-                    name='title'
                     value={this.state.title}
-                    onChange={(v) => this.setState({ title: v.target.value })} />
+                    onChange={(v) => this.setState({title: v.target.value})}
+                    className='editText' />
                 <input
                     id="standard-basic"
-                    placeholder="post"
-                    className='editText'
-                    type='text'
-                    name='content'
                     value={this.state.content}
-                    onChange={(v) => this.setState({ content: v.target.value })} />
-                <button type='submit' onClick={() => this.Update(this.state, this.props.id)}>Update Post</button>
+                    onChange={(v) => this.setState({content: v.target.value})}
+                    placeholder="post"
+                    className='editText' />
+                <button type="submit" onClick={() => this.Update(this.state, this.props.id)}>Update Post</button>
             </div>
         );
     }
 }
 
 export default UpdatePost;
+
+
+/*import React from 'react';
+import './addProfilePost.css'
+class AddProfilePost extends React.Component {
+    state = {
+        error: null,
+        title: '',
+        content: ''
+    }
+
+    add = async() => {
+        try {
+            const token = localStorage.getItem('token')
+            const data = await fetch('https://immense-bastion-77462.herokuapp.com/posts/add', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    "auth-token": token
+                },
+                body: JSON.stringify({ title: this.state.title, text: this.state.content })
+            })
+            const fetchedData = await data.json()
+            if (fetchedData.message) {
+                this.setState({error: fetchedData.message})
+            }
+            else{
+                console.log(fetchedData);
+                this.setState({
+                    title: '',
+                    content: ''
+                })
+                window.location.reload(false);
+            }
+        } catch (error) {
+            this.setState({error: 'Try again'})
+        }
+    }
+
+  
+}
+
+export default AddProfilePost; */

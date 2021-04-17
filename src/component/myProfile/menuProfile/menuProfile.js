@@ -28,7 +28,6 @@ const MenuProfile = (props) => {
                 />
                 <p className='userName'>{props.name}</p>
             </div>
-            <br />
             <div className='menuBar'>
                 <div className='add'>
                     <AddCircleOutlineIcon className='iconClass' color='black' onClick={handleOpen} />

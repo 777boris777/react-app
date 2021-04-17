@@ -61,7 +61,8 @@ class Login extends React.Component {
                         handleSubmit }) => {
                         return (
                             <form className='form' onSubmit={handleSubmit}>
-                                <label htmlFor='email'><b>email</b></label>
+                                <label htmlFor='email'><b>Email</b></label>
+                                <br />
                                 <input
                                     id='email'
                                     type='email'
@@ -72,7 +73,9 @@ class Login extends React.Component {
                                     value={values.email}
                                     className={touched.email && errors.email ? "ERRORKA" : null} />
                                 <Error touched={touched.email} message={errors.email} />
-                                <label htmlFor='password'><b>password</b></label>
+                                
+                                <label htmlFor='password'><b>Password</b></label>
+                                <br />
                                 <input
                                     id='password'
                                     type='password'
@@ -83,6 +86,8 @@ class Login extends React.Component {
                                     value={values.password}
                                     className={touched.password && errors.password ? "ERRORKA" : null} />
                                 <Error touched={touched.password} message={errors.password} />
+                                
+                                <br />
                                 <button type='submit'>Login</button>
                             </form>
                         )

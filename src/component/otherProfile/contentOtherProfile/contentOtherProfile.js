@@ -4,6 +4,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';
 import './contentOtherProfile.css'
 const ContentOtherProfile = (props) => {
+    console.log(props);
     return (
         <div className='contentProfile'>
             <div className='myContent'>

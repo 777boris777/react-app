@@ -78,6 +78,7 @@ class SignUp extends React.Component {
                         handleSubmit }) => (
                             <form className="form" onSubmit={handleSubmit}>
                                 <label htmlFor="text"><b>Name</b></label>
+                                <br />
                                 <input
                                     id="text"
                                     type="text"
@@ -90,6 +91,7 @@ class SignUp extends React.Component {
                                 <Error touched={touched.name} message={errors.name} />
 
                                 <label htmlFor="text"><b>Last Name</b></label>
+                                <br />
                                 <input
                                     id="text"
                                     type="text"
@@ -102,6 +104,7 @@ class SignUp extends React.Component {
                                 <Error touched={touched.lastName} message={errors.lastName} />
 
                                 <label htmlFor="email"><b>Email</b></label>
+                                <br />
                                 <input
                                     id="text"
                                     type="email"
@@ -112,7 +115,9 @@ class SignUp extends React.Component {
                                     value={values.email}
                                     className={touched.email && errors.email ? 'ERRORKA' : null} />
                                 <Error touched={touched.email} message={errors.email} />
+                                
                                 <label htmlFor="password"><b>Password</b></label>
+                                <br />
                                 <input
                                     type="password"
                                     placeholder="Enter Password"
@@ -122,7 +127,9 @@ class SignUp extends React.Component {
                                     value={values.password}
                                     className={touched.password && errors.password ? 'ERRORKA' : null} />
                                 <Error touched={touched.password} message={errors.password} />
+
                                 <label htmlFor="Confirm Password"><b>Confirm Password</b></label>
+                                <br />
                                 <input
                                     type="password"
                                     placeholder="Confirm Password"
@@ -132,7 +139,9 @@ class SignUp extends React.Component {
                                     value={values.confirmPassword}
                                     className={touched.confirmPassword && errors.confirmPassword ? 'ERRORKA' : null} />
                                 <Error touched={touched.confirmPassword} message={errors.confirmPassword} />
-                                <label htmlFor="profileImg"><b>image</b></label>
+
+                                <label htmlFor="profileImg"><b>Image</b></label>
+                                <br />
                                 <input
                                     type="text"
                                     // placeholder=""
@@ -141,6 +150,7 @@ class SignUp extends React.Component {
                                     onBlur={handleBlur}
                                     value={values.profileImg}
                                     className={touched.profileImg && errors.profileImg ? 'ERRORKA' : null} />
+                                <br />
                                 <button type="submit">Sign Up</button>
                             </form>
                         )}

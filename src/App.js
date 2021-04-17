@@ -29,6 +29,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.postinfo);
     return (
       <div className="App">
         <Switch>

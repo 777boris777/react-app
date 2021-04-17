@@ -1,51 +1,57 @@
 .menuProfile {
-    width: 20%;
-    height: 100%;
+    width: 20vw;
 }
-
 .AvatarWrap {
     height: 200px;
-    width: 100%;
+    width: 20vw;
 }
-
 .bgAvatar {
     width: 150px !important;
     height: 150px !important;
     margin-left: 25px;
     margin-top: 25px;
 }
-
-.logout{
-    padding: 18px;
-    background-color: blue;
-}
-
-.userName{
+.userName {
     margin-left: 25%;
     font-size: 120%;
 }
-
-.menuBar{
-    margin-left: 10%;
-}
-.add, .postsLink{
-    width: 100%;
-    height: 20%;
+.add,
+.postsLink {
+    width: 20vw;
     display: flex;
-    margin: 10px 0;
+    margin: 20px 0;
 }
-
-.LinkTo{
-    /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  margin: 10px;
+.LinkTo {
+    margin: 10px;
 }
-.iconClass{
+.iconClass {
     width: 40px !important;
     height: 40px !important;
     color: black;
 }
-.buttonLogout{
+.buttonLogout {
     background-color: #a4a4a4;
+}
+
+@media screen and (max-width: 600px) {
+    .menuProfile {
+        width: 30vw;
+    }
+    .AvatarWrap {
+        height: 150px;
+        width: 30vw;
+    }
+    .bgAvatar {
+        width: 100px !important;
+        height: 100px !important;
+        margin-left: 5px;
+        margin-top: 15px;
+    }
+    .add,
+    .postsLink {
+        width: 30vw;
+    }
+    .buttonLogout {
+        width: 88px;
+    }
 }

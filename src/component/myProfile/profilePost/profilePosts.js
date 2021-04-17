@@ -1,15 +1,17 @@
 import React from 'react';
 import './profilePosts.css'
 import UpdatePost from './updatePost/updatePost';
+import SimpleModal from '../../UI/model/model';
 
 class ProfilePosts extends React.Component {
-
   state = {
     open: false,
-    data: null
+    data: null,
+    edit: {}
   }
-
-
+  handleClose = () => {
+    this.setState({ open: false })
+  }
   deletePost = async (id) => {
     try {
       const token = localStorage.getItem('token');
@@ -20,39 +22,52 @@ class ProfilePosts extends React.Component {
         }
       })
       console.log(data);
-      
+
       window.location.reload(false);
     }
     catch (error) {
       console.log(error.message)
     }
   }
-
   render() {
     if (this.props.data.length > 0) {
       const ProfilePosts = this.props.data.map(esi => (
-        <div className='ProfilePostsTitle'>
-          <button onClick={() => this.setState({ open: true, data: esi })} style={{ width: '8%', height: 10, background: 'green', textAlign: 'center', borderRadius: 10, boxSizing: 'border-box', position: 'relative', left: '80%', outline: 'none' }}><p style={{ marginTop: -7, marginLeft: -7 }}>Edit</p></button>
-          <button onClick={() => this.deletePost(esi._id)} style={{ width: '8%', height: 10, background: 'darkred', textAlign: 'center', borderRadius: 10, boxSizing: 'border-box', position: 'relative', left: '82%', outline: 'none' }}><p style={{ marginTop: -7 }}>X</p></button>
-          <h5 className='ProfilePostsText' style={{ marginTop: -25 }}>{esi.date}</h5>
-          <h3 className='ProfilePostsText' style={{ textAlign: 'center', marginTop: -20 }}>{esi.title}</h3>
-          <p className='ProfilePostsText' style={{ textAlign: 'center', marginTop: 0 }}>{esi.content}</p>
-        </div>
-      ))
+        <div className='ProfilePostsPost'>
+          <button style={{ background: '#0b990b' }}
+            onClick={() => this.setState({ open: true, data: esi })}
+            className='button' >
+            <p>Edit</p>
+          </button>
+          <button style={{ background: '#db2121' }}
+            onClick={() => this.deletePost(esi._id)}
+            className='button'>
+            <p>X</p>
+          </button>
+          <p className='ProfilePostsTime' >{esi.date.split("T",1)}</p>
+          <div className='text' >
+            <p className='ProfilePostsTitle' >{esi.title}</p>
+            <p className='ProfilePostsText' >{esi.content}</p>
+          </div>
+          {/* <table>
+            <tr>
+              <td><p className='ProfilePostsTitle' >{esi.title}</p></td>
+              <td><p className='ProfilePostsText' >{esi.content}</p></td>
+            </tr>
+          </table> */}
+        </div>))
       return (
-        this.state.open === false ?
-          <div className='ProfilePosts'>
-            {ProfilePosts}
-          </div>
-          :
-          <div>
-            <button onClick={() => this.setState({open: false})} style={{ width: 60, height: 10, background: 'red', textAlign: 'center', borderRadius: 10, boxSizing: 'border-box', position: 'absolute', left: '68%', outline: 'none' }}><p style={{ marginTop: -7 }}>X</p></button>
-            <UpdatePost
-              title={this.state.data.title}
-              content={this.state.data.content}
-              id={this.state.data._id}
-            />
-          </div>
+        <div className='ProfilePosts'>
+          {ProfilePosts}
+          {this.state.data ?
+            <SimpleModal
+              handleClose={this.handleClose}
+              open={this.state.open}
+              body={<UpdatePost
+                title={this.state.data.title}
+                content={this.state.data.content}
+                id={this.state.data._id}
+              />} /> : null}
+        </div>
       );
     }
     else {
@@ -67,3 +82,5 @@ class ProfilePosts extends React.Component {
   }
 }
 export default ProfilePosts;
+
+
